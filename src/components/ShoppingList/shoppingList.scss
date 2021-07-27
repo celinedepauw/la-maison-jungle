@@ -1,0 +1,14 @@
+.shoppingList {
+
+    .shoppingList-categories {
+
+    }
+
+    .shoppingList-plants {
+        list-style-type: none;
+        padding: 32px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: justify;
+    }
+}
