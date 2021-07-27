@@ -1,6 +1,5 @@
-const QuestionForm = () => {
+const QuestionForm = ({ inputValue, setInputValue }) => {
 
-    const [inputValue, setInputValue] = useState("Posez votre question ici");
     return(
         <div className="questionForm">
             <textarea
