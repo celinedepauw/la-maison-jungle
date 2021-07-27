@@ -1,21 +1,33 @@
 import {useState} from 'react';
 
-import QuestionForm from '../QuestionForm';
-
 import './footer.scss';
 
 const Footer = () => {
 
     const [inputValue, setInputValue] = useState("");
 
+    const handleInput = (e) => {
+        setInputValue(e.target.value);
+    }
+
+    const handleBlur = () => {
+        if (!inputValue.includes('@')) {
+            alert("Attention, ceci n'est pas une adresse mail valide, elle ne contient pas de @");
+        }
+    }
+
     return(
         <footer className="footer">
-            <div className="footer-title">
+            <div className="footer-element">
                 Pour les passionnés de plantes
             </div>
-            <div className="footer-get-email">Laissez-nous votre email :
-            <QuestionForm inputValue={inputValue} setInputValue={setInputValue}/>
-            </div>
+            <div className="footer-element">Laissez-nous votre email :</div>
+            <input
+                placeholder="Saisissez votre adresse mail"
+                onChange={handleInput}
+                value={inputValue}
+                onBlur={handleBlur}
+            />
         </footer>
     )
 }
