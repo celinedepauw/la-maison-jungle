@@ -9,16 +9,16 @@ import '../App.scss';
 
 const App = () => {
   const [cart, updateCart] = useState([]);
-
-  return (
-    <div className="App">
-      <Banner />
-      <Cart cart={cart} updateCart={updateCart}/>
-      <ShoppingList cart={cart} updateCart={updateCart}/>
-      <Footer />
-    </div>
-
-  );
+	return (
+		<div className="app">
+			<Banner />
+			<div className="app-contain">
+				<Cart cart={cart} updateCart={updateCart} />
+				<ShoppingList cart={cart} updateCart={updateCart} />
+			</div>
+			<Footer />
+		</div>
+	)
 }
 
 export default App;
