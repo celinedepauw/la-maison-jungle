@@ -4,7 +4,7 @@ import './shoppingList.scss';
 
 import {plantList} from '../../datas/plantList';
 
-const ShoppingList = () => {
+const ShoppingList = ({ cart, updateCart }) => {
     const categories = plantList.reduce(
         (acc, plant) =>
             acc.includes(plant.category) ? acc : acc.concat(plant.category),
@@ -19,7 +19,8 @@ const ShoppingList = () => {
             </ul>
             <ul className="shoppingList-plants">
             {plantList.map(({id, name, cover, water, light}) => (
-                 <PlantItem
+                <div key={id}>
+                    <PlantItem
                     key={id}
                     id={id}
                     name={name}
@@ -27,6 +28,9 @@ const ShoppingList = () => {
                     water={water}
                     light={light}
                     />
+                <button on Click={() => updateCart(cart + 1)}>Ajouter</button>
+                </div>
+                 
             ))}
             </ul>
         </div>
