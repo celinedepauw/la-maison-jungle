@@ -1,14 +1,25 @@
 .categories {
+    text-align: center;
+    padding-top: 30px;
+
+    .categories-title {
+        margin-bottom: 10px;
+    }
 
     .categories-menu {
+        margin-right: 15px;
+        border: 1px solid #31b572;
+        border-radius: 5px;
 
         .categories-option {
-
+           
         }
     }
 
     .categories-reinitialize-button {
-        background-color: black;
+        background-color: #31b572;
         color: white;
+        border: 1px solid #31b572;
+        border-radius: 5px;
     }
 }
