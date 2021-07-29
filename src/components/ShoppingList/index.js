@@ -2,14 +2,8 @@ import PlantItem from '../PlantItem';
 
 import './shoppingList.scss';
 
-import {plantList} from '../../datas/plantList';
 
-const ShoppingList = ({ cart, updateCart }) => {
-    const categories = plantList.reduce(
-        (acc, plant) =>
-            acc.includes(plant.category) ? acc : acc.concat(plant.category),
-            []
-    )
+const ShoppingList = ({ cart, updateCart, plantList }) => {
 
     function addToCart(name, price) {
 		const currentPlantSaved = cart.find((plant) => plant.name === name)
@@ -28,11 +22,6 @@ const ShoppingList = ({ cart, updateCart }) => {
 
     return(
         <div className="shoppingList">
-            <ul className="shoppingList-categories">
-                {categories.map((category) => (
-                    <li key={category}>{category}</li>
-                ))}
-            </ul>
             <ul className="shoppingList-plants">
             {plantList.map(({id, name, cover, water, light, price}) => (
                 <div key={id}>
