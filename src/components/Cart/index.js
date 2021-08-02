@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './cart.scss';
 
@@ -10,6 +10,10 @@ const Cart = ({cart, updateCart}) => {
 		(acc, plantType) => acc + plantType.amount * plantType.price,
 		0
 	)
+
+	useEffect(() => {
+		document.title = `LMJ : ${total}€ d'achats`
+	}, [total]);
 
     return isOpen ? (
         <div className="cart">
